@@ -1,31 +1,41 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import {Header} from './Header'
+import { Header } from './Header';
 
-describe("Header", () => {
-    
-    let container;
+describe("Header Component", () => {
     beforeEach(() => {
-        container = render(<Header />);
+        render(<Header />);
     });
 
-    it("Footer rendered?", () => {
+    it("renders the Header component", () => {
         expect(screen.getByTestId('header-component')).toBeInTheDocument();
     });
 
-    it("Has site logo element?", () => {
-        expect(screen.getByTestId('has-logo')).toBeInTheDocument();
+    it("contains the site logo element", () => {
+        const logo = screen.getByTestId('has-logo');
+        expect(logo).toBeInTheDocument();
+        expect(logo).toHaveAttribute('src', '../../assets/Logo.svg');
     });
 
-    it("Has navs element?", () => {
+    it("contains the navigation element", () => {
+        expect(screen.getByTestId('has-nav')).toBeInTheDocument();
+    });
+
+    it("navigation contains expected links and buttons", () => {
         const nav = screen.getByTestId('has-nav');
-        expect(nav).toBeInTheDocument();     
+        
+        // Check for the "Home" link
+        const homeLink = screen.getByRole('link', { name: /home/i });
+        expect(nav).toContainElement(homeLink);
+        expect(homeLink).toHaveAttribute('href', '/home');
+
+        // Check for the "Shop" link
+        const shopLink = screen.getByRole('link', { name: /shop/i });
+        expect(nav).toContainElement(shopLink);
+        expect(shopLink).toHaveAttribute('href', '/shop');
+
+        // Check for the "Cart" button
+        const cartButton = screen.getByRole('button', { name: /cart/i });
+        expect(nav).toContainElement(cartButton);
     });
-    it("Has navs have Home link?", () => {
-        expect(screen.getByTestId('has-nav')).toContainElement(screen.getByText('Home'));
-    });
-    it("Has navs have Shop link?", () => {
-        expect(screen.getByTestId('has-nav')).toContainElement(screen.getByText('Shop'));
-    });
-    
 });
