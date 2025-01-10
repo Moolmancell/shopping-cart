@@ -8,14 +8,13 @@ export function Header() {
             <Link to="/">
                 <img src={logo} alt="GadJets" data-testid="has-logo"/>
             </Link>
-
             <nav data-testid="has-nav">
-                <Link to="/">Home</Link>
-                <Link to="shop">Shop</Link>
-                <Link to="about">About</Link>
-                <Button title="Cart">
-                    Cart
-                </Button>
+                <ul>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="shop">Shop</Link></li>
+                    <li><Link to="about">About</Link></li>
+                    <li><Button title="Cart">Cart</Button></li>
+                </ul>
             </nav>
         </header>
     );
