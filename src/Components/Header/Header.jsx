@@ -6,9 +6,9 @@ export function Header() {
         <header data-testid="header-component">
             <img src="../../assets/Logo.svg" alt="GadJets" data-testid="has-logo"/>
             <nav data-testid="has-nav">
-                <a href="/">Home</a>
-                <a href="/shop">Shop</a>
-                <a href="/about">About</a>
+                <Link to="/">Home</Link>
+                <Link to="shop">Shop</Link>
+                <Link to="about">About</Link>
                 <Button title="Cart">
                     Cart
                 </Button>
