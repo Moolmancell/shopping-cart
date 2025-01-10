@@ -19,7 +19,7 @@ describe("Header Component", () => {
     it("contains the site logo element", () => {
         const logo = screen.getByTestId('has-logo');
         expect(logo).toBeInTheDocument();
-        expect(logo).toHaveAttribute('src', '../../assets/Logo.svg');
+        expect(logo).toHaveAttribute('src', '/src/assets/Logo.svg');
     });
 
     it("contains the navigation element", () => {
