@@ -27,12 +27,17 @@ describe("Header Component", () => {
         // Check for the "Home" link
         const homeLink = screen.getByRole('link', { name: /home/i });
         expect(nav).toContainElement(homeLink);
-        expect(homeLink).toHaveAttribute('href', '/home');
+        expect(homeLink).toHaveAttribute('href', '/');
 
         // Check for the "Shop" link
         const shopLink = screen.getByRole('link', { name: /shop/i });
         expect(nav).toContainElement(shopLink);
         expect(shopLink).toHaveAttribute('href', '/shop');
+
+        // Check for the "About" link
+        const aboutLink = screen.getByRole('link', { name: /about/i });
+        expect(nav).toContainElement(aboutLink);
+        expect(aboutLink).toHaveAttribute('href', '/about');
 
         // Check for the "Cart" button
         const cartButton = screen.getByRole('button', { name: /cart/i });
