@@ -1,7 +1,11 @@
+import { CartContext } from "../../App/App";
 import { ProductCard } from "../../Components/Product Card/ProductCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+
+
 
 export function Shop() {
+  const { addToCart } = useContext(CartContext);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState("loading"); 
   const [reload, setReload] = useState(false);
@@ -46,8 +50,8 @@ export function Shop() {
                 key={product.id} 
                 name={product.title}
                 price={product.price}
-                productId={product.id}
                 img={product.image}
+                addToCart={() => addToCart(product)}
               />
             ))}
           </section>
