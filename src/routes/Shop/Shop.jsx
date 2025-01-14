@@ -46,6 +46,8 @@ export function Shop() {
                 key={product.id} 
                 name={product.title}
                 price={product.price}
+                productId={product.id}
+                img={product.image}
               />
             ))}
           </section>
