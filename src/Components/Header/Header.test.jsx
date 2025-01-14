@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { Header } from './Header';
 import { MemoryRouter } from "react-router-dom"; 
+import userEvent from "@testing-library/user-event";
 
 describe("Header Component", () => {
     beforeEach(() => {
@@ -47,5 +48,15 @@ describe("Header Component", () => {
         // Check for the "Cart" button
         const cartButton = screen.getByRole('button', { name: /cart/i });
         expect(nav).toContainElement(cartButton);
+    });
+
+    it("shows cart when cart button is clicked", async () => {
+        const user = userEvent.setup();
+        const button = screen.getByTestId('button-component');
+
+        await user.click(button);
+
+        const cartItem = screen.getByTestId('cart-shows');
+        expect(cartItem).toBeInTheDocument();
     });
 });
