@@ -1,6 +1,6 @@
 import {Button} from '../Button/Button'
 
-export function ProductCard({name, price, img="", img_alt=""}) {
+export function ProductCard({name, price, productId, img="", img_alt=""}) {
     return <div data-testid="product-card-component">
         <img src={img} alt={img_alt} />
         <div>
