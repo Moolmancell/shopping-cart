@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import logo from '../../assets/Logo.svg';
 import { useState } from "react";
 import { Cart } from "../Cart/Cart";
+import { Sidebar } from "../Sidebar/Sidebar";
 
 export function Header() {
     const [showCart, setShowCart] = useState(false);
+    const [showSidebar, setShowSidebar] = useState(false);
 
     return (
         <header data-testid="header-component">
@@ -22,6 +24,9 @@ export function Header() {
             </nav>
             {
             showCart && <Cart/>
+            }
+            {
+            showSidebar ?  <Sidebar/> : <Button onClick={() => setShowSidebar(!showSidebar)}>sidebar</Button>
             }
         </header>
     );
