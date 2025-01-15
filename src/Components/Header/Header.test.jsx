@@ -57,7 +57,7 @@ describe("Header Component", () => {
 
     it("shows cart when cart button is clicked", async () => {
         const user = userEvent.setup();
-        const button = screen.getByTestId('button-component');
+        const button = screen.getByText("Cart");
 
         await user.click(button);
 
