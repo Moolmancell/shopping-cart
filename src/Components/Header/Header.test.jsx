@@ -49,10 +49,6 @@ describe("Header Component", () => {
         const aboutLink = screen.getByRole('link', { name: /about/i });
         expect(nav).toContainElement(aboutLink);
         expect(aboutLink).toHaveAttribute('href', '/about');
-
-        // Check for the "Cart" button
-        const cartButton = screen.getByRole('button', { name: /cart/i });
-        expect(nav).toContainElement(cartButton);
     });
 
     it("shows cart when cart button is clicked", async () => {

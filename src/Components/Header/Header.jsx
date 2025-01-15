@@ -19,10 +19,14 @@ export function Header() {
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="shop">Shop</Link></li>
                     <li><Link to="about">About</Link></li>
-                    <li><Button title="Cart" onClick={() => setShowCart(!showCart)}>Cart</Button></li>
+                    <li></li>
                 </ul>
             </nav>
-            {showCart && <Cart/>}
+            {showCart ? (
+                <Cart setShowCart={setShowCart} />
+            ) : (
+                <Button title="Cart" onClick={() => setShowCart(!showCart)}>Cart</Button>
+            )}
 
             {showSidebar ? (
                 <Sidebar setShowSidebar={setShowSidebar} />
