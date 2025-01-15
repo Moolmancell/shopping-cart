@@ -22,12 +22,13 @@ export function Header() {
                     <li><Button title="Cart" onClick={() => setShowCart(!showCart)}>Cart</Button></li>
                 </ul>
             </nav>
-            {
-            showCart && <Cart/>
-            }
-            {
-            showSidebar ?  <Sidebar/> : <Button onClick={() => setShowSidebar(!showSidebar)}>sidebar</Button>
-            }
+            {showCart && <Cart/>}
+
+            {showSidebar ? (
+                <Sidebar setShowSidebar={setShowSidebar} />
+            ) : (
+                <Button onClick={() => setShowSidebar(!showSidebar)}>sidebar</Button>
+            )}
         </header>
     );
 }
