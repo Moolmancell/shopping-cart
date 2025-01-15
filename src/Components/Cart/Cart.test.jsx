@@ -55,9 +55,20 @@ describe("Cart Component", () => {
         expect(screen.getByText(/Product Item2/i)).toBeInTheDocument();
 
         // Check if prices are rendered
-        expect(screen.getByText(/109/i)).toBeInTheDocument();
-        expect(screen.getByText(/64/i)).toBeInTheDocument();
+        expect(screen.getByText("$109")).toBeInTheDocument();
+        expect(screen.getByText("$64")).toBeInTheDocument();
 
+        //Check if Quantities are rendered
+        expect(screen.getAllByText("Quantity: 1")).toHaveLength(2);
+
+        //Check if Quantities are rendered
+        expect(screen.getByText("Total price: 64")).toBeInTheDocument();
+        expect(screen.getByText("Total price: 109")).toBeInTheDocument();
+
+        expect(screen.getAllByRole("button", { name: "+" })).toHaveLength(2);
+        expect(screen.getAllByRole("button", { name: "-" })).toHaveLength(2);
+
+        expect(screen.getAllByRole("button", { name: "Remove" })).toHaveLength(2);
         // Check if images are rendered (assuming your component displays images)
         const productImages = screen.getAllByRole("presentation");
         expect(productImages).toHaveLength(2); // Assuming there are 2 images
