@@ -1,11 +1,13 @@
 import { useContext } from "react"
 import { CartContext } from "../../App/App";
 import { CartItem } from "../Cart Item/CartItem";
+import { Button } from "../Button/Button";
 
-export function Cart() {
+export function Cart({setShowCart}) {
     const { cart, addQuantity, minusQuantity, removeFromCart } = useContext(CartContext)
 
     return <div>
+        <Button onClick={() => setShowCart(false)}>x</Button>
         <h1 data-testid="cart-shows">Cart</h1>
         {cart.map((product) => (
             <CartItem
