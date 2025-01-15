@@ -3,13 +3,18 @@ import { render, screen } from "@testing-library/react";
 import { Header } from './Header';
 import { MemoryRouter } from "react-router-dom"; 
 import userEvent from "@testing-library/user-event";
+import { CartContext } from "../../App/App";
 
 describe("Header Component", () => {
+    const mockCart = [];
+
     beforeEach(() => {
         render(
-            <MemoryRouter>
-                <Header />
-            </MemoryRouter>
+            <CartContext.Provider value={{ cart: mockCart }}>
+                <MemoryRouter>
+                    <Header />
+                </MemoryRouter>
+            </CartContext.Provider>
         );
     });
 
