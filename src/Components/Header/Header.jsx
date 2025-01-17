@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Cart } from "../Cart/Cart";
 import { Sidebar } from "../Sidebar/Sidebar";
 import ShoppingCart from '../../assets/Shopping Cart Logo/ShoppingCart.svg';
-import Tab from '../../assets/Tab/Tab.svg';
+import SidebarIcon from '../../assets/Sidebar/Sidebar.svg';
 
 export function Header() {
     const [showCart, setShowCart] = useState(false);
@@ -33,7 +33,7 @@ export function Header() {
             {showSidebar ? (
                 <Sidebar setShowSidebar={setShowSidebar} />
             ) : (
-                <Button onClick={() => setShowSidebar(!showSidebar)}><img src={Tab} alt="show tab" /></Button>
+                <Button onClick={() => setShowSidebar(!showSidebar)}><img src={SidebarIcon} alt="show tab" /></Button>
             )}
             </div>
         </header>
