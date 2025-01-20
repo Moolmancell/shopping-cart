@@ -19,9 +19,9 @@ import Sony from '../../assets/Partners/Sony.png';
 import BackgroundAbout from '../../assets/Background About/Background.png';
 
 export function Home() {
-    return <main className="overflow-hidden max-w-screen-2xl m-auto lg:px-10">
+    return <main className="overflow-hidden max-w-screen-xl m-auto lg:px-10">
         <section className="flex flex-wrap items-center bg-[#E8E8E8] py-7 px-5 md:px-20 rounded-3xl m-4 md:justify-between">
-            <div className="m-auto md:m-0 md:w-1/2">
+            <div className="m-auto md:m-0 md:w-64 lg:w-80">
                 <h1 className="text-2xl mb-3 lg:text-4xl">Your Go-To Hub for <span className="font-bold">Smart Tech Solutions!</span></h1>
                 <p className="text-xsm text-sm font-light mb-10">Innovative Gadgets, Unmatched Convenience, Always Within Reach</p>
                 <Link to="shop" className="bg-black text-sm text-white font-semibold py-2 px-5 rounded-3xl inline-flex gap-2 items-center">
@@ -107,8 +107,8 @@ export function Home() {
             <h1 className="font-bold text-white text-4xl">Contact Us</h1>
             <p className="font-normal text-base text-white my-4">We are ready to answer your questions</p>
             <form className="mt-20">
-                <input type="text" name="" id="" placeholder="Name" className="block w-full border-b-2 border-b-white bg-transparent placeholder-white my-4 pb-1 max-w-lg"/>
-                <input type="text" name="" id="" placeholder="Email" className="block w-full border-b-2 border-b-white bg-transparent placeholder-white my-4 pb-1 max-w-lg"/>
+                <input type="text" name="" id="" placeholder="Name" className="block w-full border-b-2 border-b-white bg-transparent placeholder-white my-8 pb-1 max-w-lg"/>
+                <input type="text" name="" id="" placeholder="Email" className="block w-full border-b-2 border-b-white bg-transparent placeholder-white my-8 pb-1 max-w-lg"/>
                 <Button type="submit" className="bg-transparent border-2 border-white text-white font-semibold py-2 px-5 mt-12  rounded-3xl inline-flex gap-2 items-center justify-center max-w-lg">
                     Contact Us
                     <img src={ButtonArrow} alt="" className="w-2"/>
