@@ -12,7 +12,7 @@ export function Header() {
     const [showSidebar, setShowSidebar] = useState(false);
 
     return (
-        <header data-testid="header-component" className="flex justify-between items-center p-4 bg-white">
+        <header data-testid="header-component" className="flex justify-between items-center p-4 lg:px-10 bg-white">
             <Link to="/">
                 <img src={logo} alt="GadJets" data-testid="has-logo" className="w-20"/>
             </Link>
@@ -33,7 +33,7 @@ export function Header() {
             {showSidebar ? (
                 <Sidebar setShowSidebar={setShowSidebar} />
             ) : (
-                <Button onClick={() => setShowSidebar(!showSidebar)}><img src={SidebarIcon} alt="show tab" /></Button>
+                <Button onClick={() => setShowSidebar(!showSidebar)} className="md:hidden"><img src={SidebarIcon} alt="show tab" /></Button>
             )}
             </div>
         </header>
