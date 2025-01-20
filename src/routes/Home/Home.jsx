@@ -19,23 +19,23 @@ import Sony from '../../assets/Partners/Sony.png';
 import BackgroundAbout from '../../assets/Background About/Background.png';
 
 export function Home() {
-    return <main className="overflow-hidden">
-        <section className="bg-[#E8E8E8] py-7 px-5 rounded-3xl m-4">
-            <div>
-                <h1 className="text-2xl mb-3">Your Go-To Hub for <span className="font-bold">Smart Tech Solutions!</span></h1>
-                <p className="text-sm font-light mb-10">Innovative Gadgets, Unmatched Convenience, Always Within Reach</p>
+    return <main className="overflow-hidden max-w-screen-2xl m-auto lg:px-10">
+        <section className="flex flex-wrap items-center bg-[#E8E8E8] py-7 px-5 md:px-20 rounded-3xl m-4 md:justify-between">
+            <div className="m-auto md:m-0 md:w-1/2">
+                <h1 className="text-2xl mb-3 lg:text-4xl">Your Go-To Hub for <span className="font-bold">Smart Tech Solutions!</span></h1>
+                <p className="text-xsm text-sm font-light mb-10">Innovative Gadgets, Unmatched Convenience, Always Within Reach</p>
                 <Link to="shop" className="bg-black text-sm text-white font-semibold py-2 px-5 rounded-3xl inline-flex gap-2 items-center">
                     Check Shop 
                     <img src={ButtonArrow} alt="" className="w-2"/>
                 </Link>
             </div>
-            <img src={Headphones} alt="" className="my-2"/>
+            <img src={Headphones} alt="" className="my-2 max-w-lg w-[300px] m-auto md:m-0 md:w-1/2" />
         </section>
 
         <section className="my-10">
-            <h2 className="text-xl mb-6 mx-4 w-64"><span className="font-semibold">The latest.</span> <span className="font-normal text-[#646464]">Take a look at what’s new, right now</span></h2>
-            <div className="product-cards w-full flex gap-5 justify-between overflow-x-scroll p-2 px-4 no-scrollbar box-border snap-x scroll-px-4">
-                <div className="product-card relative rounded-2xl w-[290px] h-[390px] overflow-hidden flex-shrink-0 snap-start" style={{ boxShadow: '0 0 11px 0 rgba(0, 0, 0, 0.25)' }}>
+            <h2 className="text-xl lg:text-2xl mb-6 mx-4 w-64 lg:w-auto"><span className="font-semibold">The latest.</span> <span className="font-normal text-[#646464]">Take a look at what’s new, right now</span></h2>
+            <div className="product-cards w-full flex gap-5 overflow-x-scroll p-2 px-4 no-scrollbar box-border snap-x scroll-px-4">
+                <div className="product-card relative rounded-2xl w-[290px] h-[390px] lg:w-[calc(33%-10px)] lg:gap-0 lg:h-[35vw] overflow-hidden flex-shrink-0 snap-start max-h-[490px]" style={{ boxShadow: '0 0 11px 0 rgba(0, 0, 0, 0.25)' }}>
                     <div className="p-4 relative z-10">
                         <h3 className="font-semibold text-2xl">iPad Mini</h3>
                         <p className="text-xs">Thinstant Classic</p>
@@ -43,7 +43,7 @@ export function Home() {
                     </div>
                     <img className="object-cover absolute inset-0 w-full h-full z-0" src={Ipad} alt=""/>
                 </div>
-                <div className="product-card relative rounded-3xl w-[290px] h-[390px] overflow-hidden flex-shrink-0 snap-start" style={{ boxShadow: '0 0 11px 0 rgba(0, 0, 0, 0.25)' }}>
+                <div className="product-card relative rounded-3xl w-[290px] h-[390px] lg:w-[calc(33%-10px)] lg:h-auto overflow-hidden flex-shrink-0 snap-start max-h-[490px]" style={{ boxShadow: '0 0 11px 0 rgba(0, 0, 0, 0.25)' }}>
                     <div className="py-4 px-3 relative z-10">
                         <h3 className="font-semibold text-2xl">Ultra Open Earbuds</h3>
                         <p className="text-xs">Color Chilled Lilac</p>
@@ -51,28 +51,28 @@ export function Home() {
                     </div>
                     <img className="object-cover absolute inset-0 w-full h-full z-0" src={UltraOpenEarbuds} alt="Ultra Open Earbuds"/>
                 </div>
-                    <div className="product-card relative rounded-3xl w-[290px] h-[390px] overflow-hidden flex-shrink-0 snap-start" style={{ boxShadow: '0 0 11px 0 rgba(0, 0, 0, 0.25)' }}>
-                        <div className="py-4 px-3 relative z-10">
-                            <h3 className="font-semibold text-2xl">FE 28–70 mm F2 GM</h3>
-                            <p className="text-xs">Thinstant Classic</p>
-                            <p className="font-light text-xs my-2">Starting at $100</p>
-                        </div>
-                        <img className="object-cover absolute inset-0 w-full h-full z-0" src={FE2870mmF2GM} alt="FE 28–70 mm F2 GM"/>
+                <div className="product-card relative rounded-3xl w-[290px] h-[390px] lg:w-[calc(33%-10px)] lg:h-auto overflow-hidden flex-shrink-0 snap-start max-h-[490px]" style={{ boxShadow: '0 0 11px 0 rgba(0, 0, 0, 0.25)' }}>
+                    <div className="py-4 px-3 relative z-10">
+                        <h3 className="font-semibold text-2xl">FE 28–70 mm F2 GM</h3>
+                        <p className="text-xs">Thinstant Classic</p>
+                        <p className="font-light text-xs my-2">Starting at $100</p>
                     </div>
+                    <img className="object-cover absolute inset-0 w-full h-full z-0" src={FE2870mmF2GM} alt="FE 28–70 mm F2 GM"/>
+                </div>
             </div>
         </section>
 
         <section>
-            <h2 className="text-xl text-[#646464] my-5 mx-4">Our <span className="font-semibold text-black">Partners</span></h2>
-                <div className="partner-cards w-full flex gap-5 justify-between overflow-x-scroll p-2 px-4 no-scrollbar box-border snap-x scroll-px-4">
-                    <div className="partner-card flex-shrink-0 snap-start"><img src={Bose} alt="Bose" className="w-64"/></div>
-                    <div className="partner-card flex-shrink-0 snap-start"><img src={Apple} alt="Apple" className="w-64"/></div>
-                    <div className="partner-card flex-shrink-0 snap-start"><img src={Sony} alt="Sony" className="w-64"/></div>
+            <h2 className="text-xl text-[#646464] my-5 mx-4 lg:text-2xl">Our <span className="font-semibold text-black">Partners</span></h2>
+                <div className="partner-cards w-full flex gap-5 overflow-x-scroll p-2 px-4 no-scrollbar box-border snap-x scroll-px-4">
+                    <div className="partner-card flex-shrink-0 snap-start lg:flex-1"><img src={Bose} alt="Bose" className="w-64 lg:w-auto mx-auto"/></div>
+                    <div className="partner-card flex-shrink-0 snap-start lg:flex-1"><img src={Apple} alt="Apple" className="w-64 lg:w-auto mx-auto"/></div>
+                    <div className="partner-card flex-shrink-0 snap-start lg:flex-1"><img src={Sony} alt="Sony" className="w-64 lg:w-auto mx-auto"/></div>
                 </div>
         </section>
 
         <section>
-            <div className="features flex flex-col gap-20 align-center justify-center py-20 ">
+            <div className="features flex flex-col md:flex-row gap-20 md:gap-0 lg:gap-20  align-center justify-center py-20 ">
                 <div className="features-child">
                     <img src={FreeShipping} alt="" className="m-auto"/>
                     <h1 className="text-center font-bold text-xl my-2">Free Shipping</h1>
@@ -107,9 +107,9 @@ export function Home() {
             <h1 className="font-bold text-white text-4xl">Contact Us</h1>
             <p className="font-normal text-base text-white my-4">We are ready to answer your questions</p>
             <form className="mt-20">
-                <input type="text" name="" id="" placeholder="Name" className="w-full border-b-2 border-b-white bg-transparent placeholder-white my-4 pb-1"/>
-                <input type="text" name="" id="" placeholder="Email" className="w-full border-b-2 border-b-white bg-transparent placeholder-white my-4 pb-1"/>
-                <Button type="submit" className="bg-transparent border-2 border-white text-white font-semibold py-2 px-5 mt-12  rounded-3xl inline-flex gap-2 items-center justify-center">
+                <input type="text" name="" id="" placeholder="Name" className="block w-full border-b-2 border-b-white bg-transparent placeholder-white my-4 pb-1 max-w-lg"/>
+                <input type="text" name="" id="" placeholder="Email" className="block w-full border-b-2 border-b-white bg-transparent placeholder-white my-4 pb-1 max-w-lg"/>
+                <Button type="submit" className="bg-transparent border-2 border-white text-white font-semibold py-2 px-5 mt-12  rounded-3xl inline-flex gap-2 items-center justify-center max-w-lg">
                     Contact Us
                     <img src={ButtonArrow} alt="" className="w-2"/>
                 </Button>
